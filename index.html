@@ -1,5 +1,81 @@
-<html>
-  <body>
-    <p>Hello World!!</p>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <style>
+        /* Your existing styles remain unchanged */
+
+        .project {
+            border: 1px solid #ddd;
+            padding: 1em;
+            margin: 1em;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .project:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Your Name</h1>
+        <p>Web Developer</p>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Your introduction goes here.</p>
+        <svg height="100" width="100">
+            <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+        </svg>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project" onclick="showProjectDetails('Project 1', 'Description of Project 1.')">
+            <h3>Project 1</h3>
+            <svg height="50" width="50">
+                <rect width="50" height="50" style="fill:blue;" />
+            </svg>
+        </div>
+        <div class="project" onclick="showProjectDetails('Project 2', 'Description of Project 2.')">
+            <h3>Project 2</h3>
+            <svg height="50" width="50">
+                <circle cx="25" cy="25" r="20" style="fill:green;" />
+            </svg>
+        </div>
+        <!-- Add more project sections as needed -->
+    </section>
+
+    <div id="projectDetails" style="display: none;">
+        <h3 id="projectTitle"></h3>
+        <p id="projectDescription"></p>
+        <button onclick="hideProjectDetails()">Close</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Your Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showProjectDetails(title, description) {
+            document.getElementById("projectTitle").innerText = title;
+            document.getElementById("projectDescription").innerText = description;
+            document.getElementById("projectDetails").style.display = "block";
+        }
+
+        function hideProjectDetails() {
+            document.getElementById("projectDetails").style.display = "none";
+        }
+    </script>
+</body>
+
 </html>
